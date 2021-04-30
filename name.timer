@@ -1,0 +1,4 @@
+[Timer]
+OnStartupSec=5m
+# retry every hour since service checks whether to actually run
+OnActiveSec=1h
