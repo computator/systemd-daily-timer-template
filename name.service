@@ -3,3 +3,4 @@ Environment='NEXTRUN_FILE=%S/%N_nextrun'
 Environment='NEXTAFTER=3am tomorrow'
 Environment='SERVICE_CMD=/usr/bin/service'
 ExecStart=/bin/sh -c 'if [ ! -f "$NEXTRUN_FILE" ] || [ $(date +%%s) -gt "$(cat "$NEXTRUN_FILE")" ]; then $SERVICE_CMD || exit $? && date -d "$NEXTAFTER" +%%s > "$NEXTRUN_FILE"; fi'
+SyslogIdentifier=%N
